@@ -32,5 +32,5 @@ before_script:
   - adb wait-for-device
   - adb shell input keyevent 82 &
 
-script: ./gradlew :cocktaillist:build :cocktaillist:connectedDebugAndroidTest
+script: ./gradlew :app:build :app:connectedDebugAndroidTest
 
