@@ -1,36 +1,21 @@
 language: android
 android:
   components:
-    - build-tools-30.0.3
-    - android-30
-    - android-21
-    - add-on
-    - extra
-    - platform-tools
-    - tools
-    - extra-google-google_play_services
-    - extra-google-m2repository
-    - extra-android-m2repository
-    - addon-google_apis-google-30
-    - sys-img-armeabi-v7a-android-28
-
-env:
-  global:
-    # Add this
-    - MALLOC_ARENA_MAX=2
-
-sudo: required
-
-before_install:
-  - yes | sdkmanager "platforms;android-28"
-  - chmod +x gradlew
+  - tools
+  - platform-tools
+  - build-tools-28.0.2
+  - android-28
+  - extra-google-google_play_services
+  - extra-android-m2repository
+  - extra-android-support
+  - extra-google-m2repository
+  - sys-img-armeabi-v7a-android-28
 
 before_script:
-  # Create and start emulator
-  - echo no | android create avd --force -n test -t android-28 --abi armeabi-v7a
-  - emulator -avd test -no-audio -no-window &
-  - adb wait-for-device
-  - adb shell input keyevent 82 &
+- echo no | android create avd --force -n test -t android-28 --abi armeabi-v7a
+- emulator -avd test -no-audio -no-window &
+- android-wait-for-emulator
+- adb shell input keyevent 82 &
 
-script: ./gradlew :app:build :app:connectedDebugAndroidTest
-
+script:
+- ./gradlew clean connectedCheck
