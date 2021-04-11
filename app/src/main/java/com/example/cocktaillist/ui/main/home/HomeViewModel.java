@@ -1,4 +1,4 @@
-package com.example.cocktaillist.ui.home;
+package com.example.cocktaillist.ui.main.home;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
