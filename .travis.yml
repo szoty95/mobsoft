@@ -34,3 +34,16 @@ before_script:
 
 script: ./gradlew :app:build :app:connectedDebugAndroidTest
 
+deploy:
+  provider: releases
+  api_key: $GITHUB_KEY
+  file: app/build/outputs/apk/release/app-release.apk
+  skip_cleanup: true
+  on:
+    tags: true
+
+notifications:
+  email:
+    recipients:
+    - emailaddress@yourdomain.com
+    on_failure: always
