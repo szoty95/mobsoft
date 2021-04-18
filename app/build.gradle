@@ -47,7 +47,11 @@ dependencies {
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
-    implementation 'com.google.code.gson:gson:2.8.6'
+
+
+    // RxJava
+
+    // Room DB
 
     implementation group: 'org.apache.oltu.oauth2', name: 'org.apache.oltu.oauth2.client', version: '1.0.0'
     implementation group: 'io.swagger', name: 'swagger-annotations', version: '1.6.2'
