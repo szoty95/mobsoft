@@ -1,9 +1,4 @@
-package io.swagger.client.auth;
-
-import static java.net.HttpURLConnection.HTTP_UNAUTHORIZED;
-
-import java.io.IOException;
-import java.util.Map;
+package com.example.cocktaillist.io.swagger.client.auth;
 
 import org.apache.oltu.oauth2.client.OAuthClient;
 import org.apache.oltu.oauth2.client.request.OAuthBearerClientRequest;
@@ -16,11 +11,16 @@ import org.apache.oltu.oauth2.common.exception.OAuthSystemException;
 import org.apache.oltu.oauth2.common.message.types.GrantType;
 import org.apache.oltu.oauth2.common.token.BasicOAuthToken;
 
+import java.io.IOException;
+import java.util.Map;
+
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Request.Builder;
 import okhttp3.Response;
+
+import static java.net.HttpURLConnection.HTTP_UNAUTHORIZED;
 
 public class OAuth implements Interceptor {
 
@@ -37,7 +37,7 @@ public class OAuth implements Interceptor {
     private AccessTokenListener accessTokenListener;
 
     public OAuth( OkHttpClient client, TokenRequestBuilder requestBuilder ) {
-        this.oauthClient = new OAuthClient(new OAuthOkHttpClient(client));
+        this.oauthClient = new OAuthClient(new com.example.cocktaillist.io.swagger.client.auth.OAuthOkHttpClient(client));
         this.tokenRequestBuilder = requestBuilder;
     }
 
@@ -45,7 +45,7 @@ public class OAuth implements Interceptor {
         this(new OkHttpClient(), requestBuilder);
     }
 
-    public OAuth(OAuthFlow flow, String authorizationUrl, String tokenUrl, String scopes) {
+    public OAuth(com.example.cocktaillist.io.swagger.client.auth.OAuthFlow flow, String authorizationUrl, String tokenUrl, String scopes) {
         this(OAuthClientRequest.tokenLocation(tokenUrl).setScope(scopes));
         setFlow(flow);
         authenticationRequestBuilder = OAuthClientRequest.authorizationLocation(authorizationUrl);

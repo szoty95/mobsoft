@@ -1,4 +1,4 @@
-package io.swagger.client;
+package com.example.cocktaillist.io.swagger.client;
 
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-18T19:16:59.460+02:00")
 public class StringUtil {

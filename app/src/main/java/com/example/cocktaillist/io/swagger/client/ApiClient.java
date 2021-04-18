@@ -1,34 +1,28 @@
-package io.swagger.client;
+package com.example.cocktaillist.io.swagger.client;
 
-import java.io.IOException;
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Type;
-import java.util.Date;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import com.example.cocktaillist.io.swagger.client.auth.ApiKeyAuth;
+import com.example.cocktaillist.io.swagger.client.auth.HttpBasicAuth;
+import com.example.cocktaillist.io.swagger.client.auth.OAuth;
+import com.example.cocktaillist.io.swagger.client.auth.OAuth.AccessTokenListener;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
 
 import org.apache.oltu.oauth2.client.request.OAuthClientRequest.AuthenticationRequestBuilder;
 import org.apache.oltu.oauth2.client.request.OAuthClientRequest.TokenRequestBuilder;
 
-import retrofit2.Converter;
-import retrofit2.Retrofit;
-import retrofit2.GsonConverterFactory;
+import java.io.IOException;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Type;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonParseException;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
-import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
-
-
-import io.swagger.client.auth.HttpBasicAuth;
-import io.swagger.client.auth.ApiKeyAuth;
-import io.swagger.client.auth.OAuth;
-import io.swagger.client.auth.OAuth.AccessTokenListener;
-import io.swagger.client.auth.OAuthFlow;
+import retrofit2.Converter;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class ApiClient {
@@ -329,9 +323,6 @@ class GsonCustomConverterFactory extends Converter.Factory
             return gsonConverterFactory.responseBodyConverter(type, annotations, retrofit);
     }
 
-    @Override
-    public Converter<?, RequestBody> requestBodyConverter(Type type, Annotation[] annotations, Retrofit retrofit) {
-            return gsonConverterFactory.requestBodyConverter(type, annotations, retrofit);
-    }
+
 }
 

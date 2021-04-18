@@ -1,4 +1,4 @@
-package io.swagger.client.auth;
+package com.example.cocktaillist.io.swagger.client.auth;
 
 import java.io.IOException;
 

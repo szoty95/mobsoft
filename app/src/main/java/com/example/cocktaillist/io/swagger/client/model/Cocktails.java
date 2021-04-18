@@ -1,10 +1,11 @@
-package io.swagger.client.model;
-
-import java.util.Objects;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+package com.example.cocktaillist.io.swagger.client.model;
 
 import com.google.gson.annotations.SerializedName;
+
+import java.util.Objects;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 

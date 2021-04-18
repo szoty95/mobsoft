@@ -1,4 +1,4 @@
-package io.swagger.client;
+package com.example.cocktaillist.io.swagger.client;
 
 import java.util.Arrays;
 import java.util.List;

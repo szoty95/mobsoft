@@ -1,35 +1,31 @@
-package io.swagger.client.api;
+package com.example.cocktaillist.io.swagger.client.api;
 
-import io.swagger.client.CollectionFormats.*;
+import android.telecom.Call;
 
+import com.example.cocktaillist.io.swagger.client.model.Cocktails;
 
-import retrofit2.Call;
-import retrofit2.http.*;
-
-import okhttp3.RequestBody;
-
-import io.swagger.client.model.Cocktails;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import retrofit2.http.Body;
+import retrofit2.http.DELETE;
+import retrofit2.http.GET;
+import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Query;
 
 public interface CocktailsApi {
-  
+
   /**
    * Returns the cocktail for the ID
-   * 
+   *
    * @param i cocktail id
    * @return Call<List<Cocktails>>
    */
-  
+
   @GET("lookup.php")
-  Call<List<Cocktails>> getCocktailById(
+  Call getCocktailById(
     @Query("i") Long i
   );
 
-  
+
   /**
    * Update an existing Cocktail
    * 
@@ -39,7 +35,7 @@ public interface CocktailsApi {
    */
   
   @PUT("lookup.php")
-  Call<Void> updateCocktail(
+  Call updateCocktail(
     @Query("i") Long i, @Body Cocktails body
   );
 
@@ -52,7 +48,7 @@ public interface CocktailsApi {
    */
   
   @POST("lookup.php")
-  Call<Void> createNewCocktail(
+  Call createNewCocktail(
     @Body Cocktails body
   );
 
@@ -65,7 +61,7 @@ public interface CocktailsApi {
    */
   
   @DELETE("lookup.php")
-  Call<Void> deleteCocktail(
+  Call deleteCocktail(
     @Query("i") Long i
   );
 
@@ -77,7 +73,7 @@ public interface CocktailsApi {
    */
   
   @GET("random.php")
-  Call<List<Cocktails>> getRandomCocktail();
+  Call getRandomCocktail();
     
 
   
