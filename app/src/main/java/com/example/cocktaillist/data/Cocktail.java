@@ -21,8 +21,16 @@ public class Cocktail {
     @ColumnInfo(name = "ingredients")
     private String ingredients;
 
+    @SerializedName("pictureurl")
+    @ColumnInfo(name = "pictureUrl")
+    private String pictureUrl;
+
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getIngredients() {
@@ -41,7 +49,11 @@ public class Cocktail {
         this.cocktailName = cocktailName;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
     }
 }

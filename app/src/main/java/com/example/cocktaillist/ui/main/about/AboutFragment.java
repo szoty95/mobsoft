@@ -13,7 +13,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.cocktaillist.R;
-import com.example.cocktaillist.ui.main.home.HomeViewModel;
 
 public class AboutFragment extends Fragment {
 
@@ -24,6 +23,8 @@ public class AboutFragment extends Fragment {
         aboutViewModel =
                 new ViewModelProvider(this).get(AboutViewModel.class);
         View root = inflater.inflate(R.layout.fragment_about, container, false);
+
+        //default text
         final TextView textView = root.findViewById(R.id.text_about);
         aboutViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
@@ -31,6 +32,9 @@ public class AboutFragment extends Fragment {
                 textView.setText(s);
             }
         });
+
+        //default until this point
+
         return root;
     }
 }
